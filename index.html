@@ -37,10 +37,10 @@ title: NBASTAT
 {% if paginator.previous_page == 1 %}
 <li><a href="/" class="current"><<前一页</a></li>
 {% else %}
-<li><a href="/page{{paginator.previous_page}}"><<前一页</a></li>
+<li><a href="/page{{paginator.previous_page}}">前一页</a></li>
 {% endif %}
 {% else %}
-<li>前一页</li>
+<li><a>前一页</a></li>
 {% endif %}
 {% for count in (2..paginator.total_pages) limit:8 %}
 {% if count == paginator.page %}
@@ -51,9 +51,9 @@ title: NBASTAT
 {% endfor %}
 
 {% if paginator.next_page %}
-<li><a href="/page{{paginator.next_page}}">后一页>></a></li>
+<li><a href="/page{{paginator.next_page}}">后一页</a></li>
 {% else %}
-<li>后一页 </li>
+<li><a >后一页 </a></li>
 {% endif %}
 <li><a href="/page{{paginator.total_pages}}">最后一页</a></li>
 </ul>
