@@ -79,18 +79,18 @@
     
  
     {%if page.previous%}
-{{page.previous.url}}
-{{page.previous.title | truncatewords:5}}
-
+ 
+ 
+ <a class="navbar-brand" href="{{page.previous.url}}">{{page.previous.title | truncatewords:10}}</a>
     {%endif%}
 
 
 
     {%if page.next%}
-{{page.next.url}}
-{{page.next.title | truncatewords:5}}
  
-     
+ 
+     <a class="navbar-brand" href="{{page.next.url}}">{{page.next.title | truncatewords:10}}</a>
+ 
   {{ content }}
     </div><!-- /.container -->
 
