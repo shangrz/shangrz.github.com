@@ -35,7 +35,7 @@
   </head>
 <!-- NAVBAR
 ================================================== -->
-  <body style="padding-top: 70px;">
+  <body style="padding-top: 100px;">
   
      
            
@@ -59,7 +59,17 @@
                 <li class="active"><a href="/">主页</a></li>
                 <li><a href="/about">关于我们</a></li>
                 <li><a href="/contact">联系我们</a></li>
-                 
+                
+                  {% for link in site.navigation %}
+        {% assign current = nil %}
+        {% if page.url contains link.url %}
+            {% assign current = 'active' %}
+        {% endif %}
+        <li class="element {% if forloop.first %}first{% endif %} {{ current }} {% if forloop.last %}last{% endif %}">
+            <a href="{{ link.url }}">{{ link.title }}</a>
+        </li>
+    {% endfor %}
+
               </ul>
             </div>
           </div>
