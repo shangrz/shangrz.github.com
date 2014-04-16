@@ -13,11 +13,11 @@ title: NBASTAT
       <!-- Three columns of text below the carousel -->
       <div class="row">
 
-      {% for post in site.posts %}
+      {% for post in site.posts reversed limit:1%}
  
  <div class="col-lg-4">
           <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-          <h2>{{ post.title limit:1}}</h2>
+          <h2>{{ post.title  }}</h2>
           <p> </p>
           <p>{{ post.date | date_to_string }} </p>
           <p><a class="btn btn-default" href="{{ post.url }}" role="button">View details &raquo;</a></p>
