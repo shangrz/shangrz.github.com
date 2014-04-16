@@ -1,9 +1,9 @@
 baseurl: /
 paginate: 10
 navigation:
- - title: Home
+ - title: 主页
    url: /index.html
- - title: About
+ - title: 关于我们
    url: /about.html
- - title: Contact
+ - title: 联系我们
    url: /contact.html
