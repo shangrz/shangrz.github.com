@@ -89,7 +89,7 @@ div#previousButton
 
 div.previousButtonEnabled
 {
-    background-image: url('left_arrow_mobile_n.png');
+    background-image: url('left_arrow_mobile_n.jpg');
     background-size: 22px 27px;
     width: 22px;
     height: 27px;
@@ -97,7 +97,7 @@ div.previousButtonEnabled
 
 div.previousButtonDisabled
 {
-    background-image: url('left_arrow_mobile_d.png');
+    background-image: url('left_arrow_mobile_d.jpg');
     background-size: 22px 27px;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -moz-tap-highlight-color: rgba(0,0,0,0);
@@ -119,7 +119,7 @@ div#nextButton
 
 div.nextButtonEnabled
 {
-    background-image: url('right_arrow_mobile_n.png');
+    background-image: url('right_arrow_mobile_n.jpg');
     background-size: 22px 27px;
     width: 22px;
     height: 27px;
@@ -127,7 +127,7 @@ div.nextButtonEnabled
 
 div.nextButtonDisabled
 {
-    background-image: url('right_arrow_mobile_d.png');
+    background-image: url('right_arrow_mobile_d.jpg');
     background-size: 22px 27px;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -moz-tap-highlight-color: rgba(0,0,0,0);
@@ -356,7 +356,7 @@ div.helpPlacardCloseButton {
     top:10px;
     left:10px;    
     position:absolute;
-    background:url('close_d.png') no-repeat 0 0;
+    background:url('close_d.jpg') no-repeat 0 0;
     width:21px;
     height:21px;
 }
@@ -432,7 +432,7 @@ div.helpPlacardRightItem {
         background-size: 44px 54px;
         width: 44px;
         height: 54px;
-        background-image: static_url('left_arrow_mobile_n-hd.png');
+        background-image: static_url('left_arrow_mobile_n-hd.jpg');
     }
 
     div.previousButtonDisabled
@@ -440,7 +440,7 @@ div.helpPlacardRightItem {
         background-size: 44px 54px;
         width: 44px;
         height: 54px;
-        background-image: static_url('left_arrow_mobile_d-hd.png');
+        background-image: static_url('left_arrow_mobile_d-hd.jpg');
     }
 
     div.nextButtonEnabled
@@ -448,7 +448,7 @@ div.helpPlacardRightItem {
         background-size: 44px 54px;
         width: 44px;
         height: 54px;
-        background-image: static_url('right_arrow_mobile_n-hd.png');
+        background-image: static_url('right_arrow_mobile_n-hd.jpg');
     }
 
     div.nextButtonDisabled
@@ -456,7 +456,7 @@ div.helpPlacardRightItem {
         background-size: 44px 54px;
         width: 44px;
         height: 54px;
-        background-image: static_url('right_arrow_mobile_d-hd.png');
+        background-image: static_url('right_arrow_mobile_d-hd.jpg');
     }
 }
 
@@ -465,22 +465,22 @@ div.helpPlacardRightItem {
 @media all and (-webkit-min-device-pixel-ratio:2) {
     div.previousButtonEnabled
     {
-        background-image: static_url('left_arrow_mobile_n-hd.png');
+        background-image: static_url('left_arrow_mobile_n-hd.jpg');
     }
 
     div.previousButtonDisabled
     {
-        background-image: static_url('left_arrow_mobile_d-hd.png');
+        background-image: static_url('left_arrow_mobile_d-hd.jpg');
     }
 
     div.nextButtonEnabled
     {
-        background-image: static_url('right_arrow_mobile_n-hd.png');
+        background-image: static_url('right_arrow_mobile_n-hd.jpg');
     }
 
     div.nextButtonDisabled
     {
-        background-image: static_url('right_arrow_mobile_d-hd.png');
+        background-image: static_url('right_arrow_mobile_d-hd.jpg');
     }
 }
 
@@ -751,7 +751,7 @@ div#waitingIndicator
     visibility: visible;
     width: 110px;
     height: 110px;
-    background-image: url('waiting_bezel.png');
+    background-image: url('waiting_bezel.jpg');
 }
 
 div#waitingSpinner
@@ -762,7 +762,7 @@ div#waitingSpinner
     left: 33px;
     width: 42px;
     height: 42px;
-    background: transparent url('spinner.png') no-repeat 0 0;
+    background: transparent url('spinner.jpg') no-repeat 0 0;
     opacity: 0.75;
     -webkit-animation: spinnerAnimationRotate 1s linear infinite;
     -moz-animation: spinnerAnimationRotate 1s linear infinite;
