@@ -1,0 +1,1363 @@
+/*
+$Revision$
+Tableau Story global.css
+Contents:
+	= Global elements
+	= Header
+	= Global section styles
+	= Specific section styles
+	= Footer
+	= Details
+	= Carousels
+	= Media Queries
+	= jScrollPane styles
+*/
+
+/*
+= Global elements
+*/
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	padding: 0;
+	background: #fff;
+	font-family: BentonSans, Helvetica, sans-serif;
+	line-height: 1;
+	color: #333;
+	min-width: 1024px;
+	width: 100%;
+}
+body.detail {
+	overflow: hidden;
+}
+body.detail #details {
+}
+body.unfixed header {
+	position: absolute;
+}
+body.unfixed header nav {
+	width: 100%;
+	height: 5000%;
+}
+body.fixed header {
+	position: fixed;
+}
+#wrapper {
+	width: 100%;
+	height: 100%;
+}
+a {
+	transition: all .25s;
+	-webkit-transition: all .25s;
+	-moz-transition: all .25s;
+	-o-transition: all .25s;
+}
+a img {
+	border: 0;
+}
+.iosfix {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 101%;
+}
+#homebutton {
+	position: fixed;
+	bottom: -70px;
+	right: 10px;
+	width: 76px;
+	height: 47px;
+	background: #fff;
+	z-index: 200;
+	-webkit-transition: bottom .5s;
+	-moz-transition: bottom .5s;
+	-o-transition: bottom .5s;
+	transition: bottom .5s;
+	box-shadow: 0 0 8px rgba(0,0,0,.5);
+	-moz-box-shadow: 0 0 8px rgba(0,0,0,.5);
+	-webkit-box-shadow: 0 0 8px rgba(0,0,0,.5);
+	-o-box-shadow: 0 0 8px rgba(0,0,0,.5);
+}
+.lt-ie9 #homebutton {
+	border-top: 1px solid #e2e2e2;
+	border-left: 1px solid #e2e2e2;
+	border-right: 1px solid #e2e2e2;
+}
+#homebutton.enabled {
+	bottom: 0;
+}
+#homebutton a {
+	text-decoration: none;
+	color: #b3b3b3;
+	display: block;
+	width: 100%;
+	height: 100%;
+	font-size: 11px;
+	font-weight: bold;
+	line-height: 13px;
+	text-transform: uppercase;
+	text-align: center;
+}
+#homebutton a span {
+	display: block;
+	padding-top: 9px;
+}
+.canhover #homebutton a:hover {
+	color: #333;
+}
+
+
+/*
+= Header
+*/
+header {
+	margin: 0;
+	width: 100%;
+	float: left;
+	clear: both;
+	position: fixed;
+	bottom: -10px;
+	left: 0;
+	z-index: 2;
+	min-width: 1024px;
+	display: block;
+}
+header nav {
+	float: left;
+	clear: both;
+	width: 100%;
+}
+header ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	clear: both;
+	width: 100%;
+}
+header .main {
+	width: 100.5%;
+	box-shadow: 0 4px 4px rgba(0,0,0,.15);
+	-moz-box-shadow: 0 4px 4px rgba(0,0,0,.15);
+	-webkit-box-shadow: 0 4px 4px rgba(0,0,0,.15);
+	-o-box-shadow: 0 4px 4px rgba(0,0,0,.15);
+	position: relative;
+	z-index: 2;
+}
+header .main .shadow {
+	width: 100%;
+	height: 17px;
+	background: url(../img/home/shadow.png) repeat-x;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+header li {
+	width: 33.333333333%;
+	display: block;
+	float: left;
+	cursor: pointer;
+	color: #fff;
+}
+header .main li {
+	height: 151px;
+	position: relative;
+}
+header .main .hover {
+	display: block;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 151px;
+	background: #000;
+	-webkit-transition: opacity .25s;
+	-moz-transition: opacity .25s;
+	-o-transition: opacity .25s;
+	transition: opacity .25s;
+	opacity: 0;
+-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	z-index: 1;
+}
+.canhover header .main li:hover .hover {
+	opacity: .2;
+}
+.lt-ie9 .canhover header .main li.story:hover {
+	background: #193e6f;
+}
+.lt-ie9 .canhover header .main li.philosophy:hover {
+	background: #c16927;
+}
+.lt-ie9 .canhover header .main li.impact:hover {
+	background: #558aa2;
+}
+header .main a {
+	display: block;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 151px;
+	z-index: 2;
+}
+header .main a img {
+	display: block;
+	margin: 41px auto 0 auto;
+}
+header .main .arrow {
+	background-repeat: no-repeat;
+	background-position: center 0;
+	width: 100%;
+	height: 8px;
+	position: absolute;
+	bottom: 0;
+	z-index: -1;
+	-webkit-transition: bottom .25s;
+	-moz-transition: bottom .25s;
+	-o-transition: bottom .25s;
+	transition: bottom .25s;
+}
+header .main .active .arrow {
+	bottom: -8px;
+}
+header .main .story {
+	background: #1f447d;
+}
+header .main .story a {
+}
+header .main .story .arrow {
+	background-image: url(../img/nav/story_arrow.png);
+}
+header .main .philosophy {
+	background: #e8762c;
+}
+header .main .philosophy .arrow {
+	background-image: url(../img/nav/philosophy_arrow.png);
+}
+header .main .impact {
+	background: #5e9fbd;
+}
+header .main .impact .arrow {
+	background-image: url(../img/nav/impact_arrow.png);
+}
+header.top .main .hover {
+	opacity: .6;
+	z-index: 3;
+}
+header.top .main .active .hover,
+header.top .main .open .hover,
+.canhover header.top .main li.active:hover .hover {
+	opacity: 0;
+}
+.canhover header.top .main li:hover .hover {
+	opacity: 0;
+}
+header .sub {
+	width: 100.5%;
+	display: none;
+	position: relative;
+	background: #fff;
+	box-shadow: 0 3px 3px rgba(0,0,0,.3);
+	-moz-box-shadow: 0 3px 3px rgba(0,0,0,.3);
+	-webkit-box-shadow: 0 3px 3px rgba(0,0,0,.3);
+	-o-box-shadow: 0 3px 3px rgba(0,0,0,.3);
+	margin-top: -65px;
+	z-index: 1;
+}
+.lt-ie9 header .sub {
+	border-bottom: 1px solid #e2e2e2;
+}
+header .sub ul {
+	display: none;
+}
+header .sub li {
+	height: 49px;
+	color: #b3b3b3;
+	position: relative;
+}
+header .sub li a {
+	color: #b3b3b3;
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	font-size: 14px;
+	line-height: 18px;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: bold;
+	padding-top: 15px;
+}
+header .sub li.active a,
+.canhover header .sub li a:hover {
+	color: #1f447d;
+}
+header .sub .philosophy li.active a,
+.canhover header .sub .philosophy li a:hover {
+	color: #e8762c;
+}
+header .sub .impact li.active a,
+.canhover header .sub .impact li a:hover {
+	color: #5e9fbd;
+}
+
+#page {
+	width: 100%;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+}
+#page.offset0-1 #breakthrough,
+#page.offset0-2 #founding,
+#page.offset1-0 #people,
+#page.offset1-1 #different,
+#page.offset1-2 #science,
+#page.offset2-0 #questions,
+#page.offset2-1 #workplaces,
+#page.offset2-2 #society {
+	position: absolute;
+	top: 0;
+}
+article {
+	margin: 0;
+	clear: both;
+	width: 100%;
+	position: absolute;
+	z-index: 1;
+}
+article section {
+	height: 800px;
+	position: relative;
+	min-width: 1024px;
+	background: #fff;
+}
+
+#home {
+	display: block;
+	z-index: 2;
+	height: 100%;
+	overflow: hidden;
+}
+#home .info {
+	position: absolute;
+	left: 50%;
+	top: 0;
+}
+#home h1 {
+	margin: 0 0 20px 0;
+	padding: 0;
+	font-size: 68px;
+	line-height: 1;
+	width: 500px;
+	color: #333;
+	font-family: "BentonSans Medium", Helvetica, sans-serif;
+	font-weight: normal;
+	letter-spacing: -.04em;
+/*
+	-webkit-transition: font-size .5s;
+	-moz-transition: font-size .5s;
+	-o-transition: font-size .5s;
+	transition: font-size .5s;
+*/
+}
+#home h1 em {
+	font-style: normal;
+	color: #1f447d;
+}
+#home h2 {
+	margin: 0;
+	padding: 0;
+	font-size: 36px;
+	line-height: 1;
+	width: 500px;
+	color: #333;
+	font-family: "BentonSans Medium", Helvetica, sans-serif;
+	font-weight: normal;
+	letter-spacing: -.04em;
+/*
+	-webkit-transition: font-size .5s;
+	-moz-transition: font-size .5s;
+	-o-transition: font-size .5s;
+	transition: font-size .5s;
+*/
+}
+#home .logo {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+}
+#home .logo a {
+	display: block;
+	background: url(../img/home/logo-full.png);
+	width: 58px;
+	height: 56px;
+	text-indent: -99999px;
+	opacity: .5;
+	-webkit-transition: opacity .25s;
+	-moz-transition: opacity .25s;
+	-o-transition: opacity .25s;
+	transition: opacity .25s;
+}
+.canhover #home .logo a:hover {
+	opacity: 1;
+}
+
+
+/*
+= Global section styles
+*/
+section .bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+section .bg img {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+section .content {
+	margin: 0 8%;
+	padding: 0;
+	display: block;
+	position: absolute;
+	width: 84%;
+}
+section h1 {
+	margin: 0 0 25px 0;
+	padding: 0 0 0 0;
+	font-size: 60px;
+	line-height: 1;
+	font-family: "BentonSans Medium", Helvetica, sans-serif;
+	font-weight: normal;
+	letter-spacing: -.04em;
+/*
+	-webkit-transition: font-size .5s;
+	-moz-transition: font-size .5s;
+	-o-transition: font-size .5s;
+	transition: font-size .5s;
+*/
+}
+section h1 em {
+	font-style: normal;
+}
+section h2 {
+	font-size: 17px;
+	line-height: 23px;
+	margin: 0 0 0 0;
+}
+section p {
+	font-size: 17px;
+	line-height: 23px;
+	padding: 0;
+	margin: 0 0 20px 0;
+	width: 465px;
+}
+section p a {
+	font-weight: bold;
+	color: #fff
+}
+.philosophy section p a {
+	color: #e8762c;
+}
+.impact section p a {
+	color: #5e9fbd;
+}
+.canhover section p a:hover {
+	text-decoration: underline;
+}
+section .block {
+	width: 492px;
+	overflow: auto;
+	overflow: hidden;
+	padding: 0;
+}
+section .block p {
+	width: 100%;
+	padding: 0 27px 0 0;
+}
+section .block p:last-child {
+	margin-bottom: 2px;
+}
+section nav,
+section .navcontainer {
+	padding: 0;
+}
+section nav ul,
+section .navcontainer ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 285px;
+	border-top: 1px solid #ccc;
+}
+section nav li,
+section .navcontainer li {
+	border-bottom: 1px solid #ccc;
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	padding: 11px 20px 10px 0;
+	color: #5c5c5c;
+	cursor: pointer;
+	-webkit-transition: color .25s;
+	-moz-transition: color .25s;
+	-o-transition: color .25s;
+	transition: color .25s;
+	position: relative;
+}
+section nav li .arrow,
+section .navcontainer li .arrow {
+	background: url(../img/sections/nav_arrow.png) no-repeat right center;
+	position: absolute;
+	top: 0;
+	right: 10px;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	-webkit-transition: all .25s;
+	-moz-transition: all .25s;
+	-o-transition: all .25s;
+	transition: all .25s;
+	-webkit-backface-visibility: hidden;
+}
+.lt-ie9 section nav li .arrow,
+.lt-ie9 section .navcontainer li .arrow {
+	display: none;
+}
+.canhover section nav li:hover .arrow,
+.canhover section .navcontainer li:hover .arrow {
+	display: block;
+	right: 0;
+	opacity: 1;
+}
+section nav li h4,
+section nav li p,
+section .navcontainer li h4,
+section .navcontainer li p {
+	opacity: .8;
+	color: #333;
+}
+.canhover section nav li:hover h4,
+.canhover section nav li:hover p,
+.canhover section .navcontainer li:hover h4,
+.canhover section .navcontainer li:hover p {
+	opacity: 1;
+}
+section nav h4,
+section .navcontainer h4 {
+	font-size: 18px;
+	line-height: 20px;
+	margin: 0;
+}
+section nav p,
+section .navcontainer p {
+	font-size: 11px;
+	line-height: 16px;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+
+/* Duplicate for getting height */
+section .dupe {
+	left: -5000px;
+/* 	left: -100px; */
+}
+section .dupe h1,
+section .dupe h2,
+section .dupe p,
+section .dupe .block,
+section .dupe nav,
+section .dupe nav ul,
+section .dupe nav li,
+section .dupe nav h4 {
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+	transition: none;
+}
+
+/* Aside */
+section aside {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 210px;
+	border-top: 3px solid #000;
+	border-bottom: 3px solid #000;
+	padding: 32px 0 40px 0;
+	text-align: center;
+	-webkit-transition: all .25s;
+	-moz-transition: all .25s;
+	-o-transition: all .25s;
+	transition: all .25s;
+}
+section aside h3 {
+	color: #000;
+	width: 100%;
+	font-family: "BentonSans Medium", Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 28px;
+	margin: 0 0 12px 0;
+	-webkit-transition: all .25s;
+	-moz-transition: all .25s;
+	-o-transition: all .25s;
+	transition: all .25s;
+}
+section aside h3.quote:before {
+	content: "“";
+	display: block;
+	font-size: 70px;
+	line-height: 1;
+	height: 38px;
+	-webkit-transition: all .25s;
+	-moz-transition: all .25s;
+	-o-transition: all .25s;
+	transition: all .25s;
+	text-align: center;
+}
+section aside h3.quote:after {
+	content: "”";
+}
+section aside h4 {
+	color: #000;
+	font-size: 18px;
+	line-height: 1;
+	margin: 0 0 1px 0;
+	-webkit-transition: all .25s;
+	-moz-transition: all .25s;
+	-o-transition: all .25s;
+	transition: all .25s;
+}
+section aside p {
+	color: #000;
+	width: 100%;
+	font-family: "BentonSans Medium", Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 13px;
+	line-height: 19px;
+	margin: 0 0 14px 0;
+}
+section aside .more {
+	width: 85px;
+	margin: 0 auto;
+	background: #1f447d;
+	-webkit-transition: all .25s;
+	-moz-transition: all .25s;
+	-o-transition: all .25s;
+	transition: all .25s;
+}
+section.philosophy aside .more {
+	background: #e8762c;
+}
+section.impact aside .more {
+	background: #5e9fbd;
+}
+section aside .more a {
+	display: block;
+	width: 85px;
+	height: 28px;
+	background: rgba(0,0,0,0);
+	font-size: 12px;
+	line-height: 16px;
+	font-family: "BentonSans Medium", Helvetica, sans-serif;
+	font-weight: normal;
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+	padding-top: 5px;
+	-webkit-transition: all .25s;
+	-moz-transition: all .25s;
+	-o-transition: all .25s;
+	transition: all .25s;
+}
+.canhover section aside .more a:hover {
+	background: rgba(0,0,0,.2);
+}
+
+/* Unique breakthrough aside */
+#breakthrough .content {
+	width: 92%;
+	margin-right: 0;
+}
+#breakthrough aside {
+	width: 589px;
+	height: 705px;
+	border: 0;
+	position: absolute;
+	right: 0;
+	text-align: left;
+}
+#breakthrough aside .bglayer {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	max-height: 100%;
+}
+#breakthrough aside .inner {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 260px;
+}
+#breakthrough aside h3 {
+	font-size: 23px;
+	line-height: 1;
+	font-family: BentonSans, Helvetica, sans-serif;
+	font-weight: bold;
+	margin: 0 0 8px 0;
+}
+#breakthrough aside p {
+	font-size: 12px;
+	line-height: 18px;
+	font-family: BentonSans, Helvetica, sans-serif;
+	margin: 0 0 8px 0;
+}
+#breakthrough aside .more {
+	margin: 0;
+}
+.story em {
+	color: #1f447d;
+}
+.philosophy em {
+	color: #e8762c;
+}
+.impact em {
+	color: #5e9fbd;
+}
+
+/* Inverse colors */
+section.inverse h1,
+section.inverse h2,
+section.inverse h3,
+section.inverse p {
+	color: #fff;
+}
+section.inverse h3 span {
+	border-color: #fff;
+}
+section.inverse h4,
+section.inverse h4 + p {
+	color: #e8e8e8;
+}
+section.inverse nav h4,
+section.inverse nav p {
+	color: #fff;
+}
+section.inverse nav ul {
+	border-top: 1px solid rgba(255,255,255,.2);
+}
+section.inverse nav li {
+	border-bottom: 1px solid rgba(255,255,255,.2);
+}
+section.inverse nav .arrow {
+	background-image: url(../img/sections/nav_arrow_inverse.png);
+}
+section.inverse aside {
+	border-color: #fff;
+}
+
+
+
+/*
+= Footer
+*/
+footer {
+	position: absolute;
+	bottom: 0;
+	padding: 0 8%;
+	width: 100%;
+	height: 40px;
+	font-size: 10px;
+	color: #fff;
+	font-family: "BentonSans Medium", Helvetica, sans-serif;
+	font-weight: normal;
+}
+footer ul {
+	list-style: none;
+	margin: 0 0 0 0;
+	padding: 0;
+}
+footer .left {
+	float: left;
+}
+footer .right {
+	float: right;
+	padding-top: 5px;
+}
+footer li {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 11px 0 0;
+}
+footer .left li a {
+	text-decoration: none;
+	color: #fff;
+	opacity: .5;
+}
+.canhover footer .left li a:hover {
+	opacity: 1;
+}
+footer .left li p {
+	opacity: .5;
+}
+footer .right li {
+	margin-right: 8px;
+}
+footer .right a {
+	display: block;
+	width: 21px;
+	height: 21px;
+	text-indent: -99999px;
+	background-color: #333;
+	background-color: rgba(33,33,33,.3);
+	background-repeat: no-repeat;
+}
+footer .facebook {
+	margin-right: 3px;
+}
+footer .facebook a {
+	background-image: url(../img/footer/facebook.png);
+}
+footer .twitter a {
+	background-image: url(../img/footer/twitter.png);
+}
+.canhover footer .right a:hover {
+	background-color: #333;
+}
+
+
+
+/*
+= Details
+*/
+#details {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	background: #fff;
+	min-width: 1024px;
+	border-left: 1px solid #e2e2e2;
+	overflow: auto;
+}
+#details * {
+	-webkit-transform: translate3d(0,0,0);
+}
+#details .inner {
+	position: relative;
+	width: 960px;
+	height: 100%;
+	margin: 0 auto;
+}
+#details .close {
+	cursor: pointer;
+	text-transform: uppercase;
+	position: absolute;
+	top: 41px;
+	left: 0;
+	font-size: 12px;
+	line-height: 14px;
+	font-weight: bold;
+	letter-spacing: -.04em;
+	-webkit-transition: all .25s;
+	-moz-transition: all .25s;
+	-o-transition: all .25s;
+	transition: all .25s;
+	background: url(../img/details/back_arrow.png) no-repeat;
+	padding: 0 0 0 22px;
+	height: 12px;
+}
+#details .close .arrow {
+	display: block;
+	position: absolute;
+	left: 0;
+	background: url(../img/details/back_arrow.png) no-repeat #333;
+	width: 14px;
+	height: 12px;
+	-webkit-transition: all .25s;
+	-moz-transition: all .25s;
+	-o-transition: all .25s;
+	transition: all .25s;
+}
+.canhover #details .close:hover {
+	color: #1f447d;
+}
+.canhover #details .close:hover .arrow {
+	background-color: #1f447d;
+}
+.canhover #details .close.detail-philosophy:hover {
+	color: #e8762c;
+}
+.canhover #details .close.detail-philosophy:hover .arrow {
+	background-color: #e8762c;
+}
+.canhover #details .close.detail-impact:hover {
+	color: #5e9fbd;
+}
+.canhover #details .close.detail-impact:hover .arrow {
+	background-color: #5e9fbd;
+}
+#details nav {
+	position: absolute;
+	left: 0;
+	top: 71px;
+	border-top: 1px solid #e5e5e5;
+	border-top: 1px solid rgba(0,0,0,.1);
+	border-bottom: 1px solid #e5e5e5;
+	border-bottom: 1px solid rgba(0,0,0,.1);
+	padding: 10px 0 13px 0;
+	margin: 0;
+	width: 100%;
+}
+#details nav ul {
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+#details nav li {
+	display: inline-block;
+	cursor: pointer;
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #b3b3b3;
+	margin: 0 25px 0 0;
+	-webkit-transition: color .25s;
+	-moz-transition: color .25s;
+	-o-transition: color .25s;
+	transition: color .25s;
+}
+#details nav li.active,
+.canhover #details nav li:hover {
+	color: #333;
+}
+#details section {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100% !important;
+	width: 100% !important;
+}
+#details section .content {
+	margin: 143px 0 0 0;
+	width: 100%;
+}
+#details section h1 {
+	font-size: 34px;
+	line-height: 40px;
+	font-family: "BentonSans Medium", Helvetica, sans-serif;
+	font-weight: normal;
+	letter-spacing: -.04em;
+	padding: 0 0 0 0;
+	margin: 0 0 8px 0;
+	width: 100%;
+}
+#details section h2 {
+	font-size: 18px;
+	line-height: 22px;
+	padding: 0 0 0 0;
+	margin: -10px 0 21px 0;
+	width: 100%;
+	font-weight: normal;
+}
+#details section p {
+	font-size: 15px;
+	line-height: 22px;
+	padding: 0;
+	margin: 0 0 22px 0;
+	width: 100%;
+}
+#details section p a {
+	color: #333;
+}
+#details section .quote {
+	color: #333;
+	font-family: "BentonSans Medium", Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 28px;
+	margin: 0 0 12px 0;
+}
+#details .stats {
+	width: 100%;
+	margin: 20px 0 45px 0;
+	padding: 13px 0 0 0;
+}
+#details .stats ul {
+	list-style: none;
+	margin: 0 0 20px 0;
+	padding: 0;
+}
+#details .stats li {
+	display: inline-block;
+	vertical-align: top;
+	min-height: 120px;
+	width: 25%;
+	margin-left: -5px;
+	border-left: 1px solid #ccc;
+	border-left: 1px solid rgba(0,0,0,.2);
+	padding: 0 2.5%;
+}
+#details .stats li:first-child {
+	margin-left: 0;
+	border-left: 0;
+	padding-left: 0;
+}
+#details .stats h3 {
+	position: relative;
+	top: 0;
+	left: 0;
+	border: none;
+	margin: 0 0 4px 0;
+	padding: 0;
+	font-weight: normal;
+	font-size: 50px;
+	line-height: 1;
+	color: #5e9fbd;
+	letter-spacing: -.04em;
+}
+#details .stats p {
+	margin: 0;
+}
+#details .left {
+	width: 450px;
+	float: left;
+}
+#details .left h1 {
+	margin-bottom: 18px;
+}
+#details .right {
+	width: 450px;
+	float: right;
+}
+#details .right img {
+	width: 450px;
+	margin: 8px 0 7px 0;
+}
+#details .right .caption,
+#details .carousel .item p {
+	font-size: 12px;
+	line-height: 18px;
+	text-align: center;
+	margin: 0 auto;
+	width: 90%;
+}
+#details .button {
+	display: block;
+	text-align: center;
+	margin: 13px 0 0 0;
+}
+#details .button a {
+	background: url(../img/details/carousel_link.png) no-repeat 11px 9px #5e9fbd;
+	padding: 5px 9px 8px 30px;
+	color: #fff;
+	font-size: 12px;
+	line-height: 1;
+	font-family: "BentonSans Medium", Helvetica, sans-serif;
+	font-weight: normal;
+	text-decoration: none;
+}
+.canhover #details .button a:hover {
+	background-color: #4b7f97;
+}
+#details .detail-philosophy .button a {
+	background-color: #e8762c;
+}
+.canhover #details .detail-philosophy .button a:hover {
+	background-color: #bc6728;
+}
+
+
+
+/*
+= Carousels
+*/
+.carousel {
+	padding: 0;
+	margin: 0;
+	width: 450px;
+	overflow: hidden;
+	position: relative;
+	height: 400px;
+}
+#details .carousel img {
+	display: block;
+	width: 450px;
+	height: auto;
+	margin-top: 0;
+}
+.carousel .container {
+	position: absolute;
+	width: 100%;
+}
+.carousel .item {
+	position: absolute;
+	width: 100%;
+}
+.carousel .controls {
+	position: absolute;
+	bottom: 10px;
+	text-align: center;
+	width: 100%;
+}
+.carousel .controls ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.carousel .controls li {
+	display: inline-block;
+	font-size: 32px;
+}
+.carousel .controls li a {
+	padding: 0 3px;
+	color: #b3b3b3;
+	text-decoration: none;
+}
+.carousel .controls li.active a,
+.canhover .carousel .controls li a:hover {
+	color: #5e9fbd;
+}
+.carousel .arrows {
+	display: none;
+}
+.canhover .carousel:hover .arrows {
+	display: block;
+}
+.carousel .leftarrow {
+	width: 42px;
+	height: 41px;
+	background: url(../img/details/carousel_arrows.png) no-repeat 12px 14px;
+	background-color: #333;
+	background-color: rgba(33,33,33,.7);
+	position: absolute;
+	left: 0;
+	top: 105px;
+	display: block;
+	cursor: pointer;
+}
+.carousel .rightarrow {
+	width: 42px;
+	height: 41px;
+	background: url(../img/details/carousel_arrows.png) no-repeat 12px -73px;
+	background-color: #333;
+	background-color: rgba(33,33,33,.7);
+	position: absolute;
+	right: 0;
+	top: 105px;
+	cursor: pointer;
+}
+.canhover .carousel .leftarrow:hover,
+.canhover .carousel .rightarrow:hover {
+	background-color: rgba(33,33,33,1);
+}
+
+
+
+/*
+= Media Queries
+*/
+@media screen and (max-width: 1200px), (max-height: 900px) {
+	#home h1 {
+		font-size: 52px;
+	}
+	#home h2 {
+		font-size: 28px;
+	}
+	section h1 {
+		font-size: 46px;
+	}
+	section h2 {
+		font-size: 15px;
+		line-height: 18px;
+	}
+	section p {
+		font-size: 13px;
+		line-height: 18px;
+		margin: 0 0 14px 0;
+	}
+	section .block {
+		width: 384px;
+	}
+	#homebutton {
+		width: 61px;
+	}
+
+	/* Detail links */
+	section nav ul {
+		width: 220px;
+	}
+	section nav h4 {
+		font-size: 14px;
+		line-height: 16px;
+	}
+	section nav p {
+		font-size: 9px;
+		line-height: 12px;
+	}
+
+	/* Aside */
+	section aside {
+		padding: 26px 0 30px 0;
+		width: 165px;
+		border-width: 2px;
+	}
+	section aside h3 {
+		font-size: 18px;
+		line-height: 22px;
+		margin-bottom: 9px;
+	}
+	section aside h3.quote:before {
+		font-size: 54px;
+		height: 28px;
+	}
+	section aside h4 {
+		font-size: 14px;
+		margin-bottom: 2px;
+	}
+	section aside p {
+		font-size: 9px;
+		line-height: 12px;
+		margin-bottom: 12px;
+	}
+	section aside p.body {
+		font-size: 11px;
+		line-height: 14px;
+		margin-bottom: 14px;
+	}
+	section aside .more a {
+		font-size: 9px;
+		line-height: 10px;
+		height: 22px;
+		width: 66px;
+	}
+	section aside .more {
+		width: 66px;
+	}
+}
+
+/* iPad */
+@media screen and (max-device-width: 768px) {
+	#breakthrough aside {
+		right: -50px;
+	}
+}
+
+
+
+/*
+ * CSS Styles that are needed by jScrollPane for it to operate correctly.
+ *
+ * Include this stylesheet in your site or copy and paste the styles below into your stylesheet - jScrollPane
+ * may not operate correctly without them.
+ */
+.jspContainer {
+	overflow: hidden;
+	position: relative;
+}
+.jspPane {
+	position: absolute;
+}
+.jspVerticalBar {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 8px;
+	height: 100%;
+}
+.jspHorizontalBar {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 16px;
+}
+.jspVerticalBar *,
+.jspHorizontalBar * {
+	margin: 0;
+	padding: 0;
+}
+.jspCap {
+	display: none;
+}
+.jspHorizontalBar .jspCap {
+	float: left;
+}
+.jspTrack {
+	background: #dde;
+	background: transparent;
+	position: relative;
+}
+.jspDrag {
+	position: relative;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+	background:#333; /* rgba fallback */
+	background:rgba(33,33,33,0.2);
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-transition: background .25s;
+	-moz-transition: background .25s;
+	-o-transition: background .25s;
+	transition: background .25s;
+}
+.lt-ie9 .jspDrag {
+	filter:"alpha(opacity=20)"; -ms-filter:"alpha(opacity=20)"; /* old ie */
+}
+.canhover .jspDrag:hover {
+	background:rgba(33,33,33,0.5);
+}
+.canhover .lt-ie9 .jspDrag:hover {
+	filter:"alpha(opacity=50)"; -ms-filter:"alpha(opacity=50)"; /* old ie */
+}
+.jspHorizontalBar .jspTrack,
+.jspHorizontalBar .jspDrag {
+	float: left;
+	height: 100%;
+}
+.jspArrow {
+	background: #50506d;
+	text-indent: -20000px;
+	display: block;
+	cursor: pointer;
+}
+.jspArrow.jspDisabled {
+	cursor: default;
+	background: #80808d;
+}
+.jspVerticalBar .jspArrow {
+	height: 16px;
+}
+.jspHorizontalBar .jspArrow {
+	width: 16px;
+	float: left;
+	height: 100%;
+}
+.jspVerticalBar .jspArrow:focus {
+	outline: none;
+}
+.jspCorner {
+	background: #eeeef4;
+	float: left;
+	height: 100%;
+}
+/* Yuk! CSS Hack for IE6 3 pixel bug :( */
+* html .jspCorner {
+	margin: 0 -3px 0 0;
+}
